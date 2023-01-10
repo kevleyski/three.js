@@ -42,6 +42,11 @@
 			An instance of [page:BufferGeometry] (or derived classes), defining the object's structure.
 		</p>
 
+		<h3>[property:Boolean isMesh]</h3>
+		<p>
+			Read-only flag to check if a given object is of type [name].
+		</p>
+
 		<h3>[property:Material material]</h3>
 		<p>
 			An instance of material derived from the [page:Material] base class or an array of materials, defining the
@@ -66,6 +71,12 @@
 
 		<h3>[method:Mesh clone]()</h3>
 		<p>Returns a clone of this [name] object and its descendants.</p>
+
+		<h3>[method:Vector3 getVertexPosition]( [param:Integer index], [param:Vector3 target] )</h3>
+		<p>
+		Get the local-space position of the vertex at the given index, taking into account the
+		current animation state of both morph targets and skinning.
+		</p>
 
 		<h3>[method:undefined raycast]( [param:Raycaster raycaster], [param:Array intersects] )</h3>
 		<p>
