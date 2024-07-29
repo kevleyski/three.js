@@ -23,7 +23,7 @@ class VRButton {
 
 				currentSession.removeEventListener( 'end', onSessionEnded );
 
-				button.textContent = 'ENTER VR';
+				button.textContent = 'RE-ENTER VR';
 
 				currentSession = null;
 
