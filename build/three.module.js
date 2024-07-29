@@ -3,7 +3,7 @@
  * Copyright 2010-2024 Three.js Authors
  * SPDX-License-Identifier: MIT
  */
-const REVISION = '167dev';
+const REVISION = '168dev';
 
 const MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2, ROTATE: 0, DOLLY: 1, PAN: 2 };
 const TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 };
@@ -13675,6 +13675,8 @@ function WebGLAttributes( gl ) {
 
 	function update( attribute, bufferType ) {
 
+		if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
+
 		if ( attribute.isGLBufferAttribute ) {
 
 			const cached = buffers.get( attribute );
@@ -13693,8 +13695,6 @@ function WebGLAttributes( gl ) {
 			return;
 
 		}
-
-		if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
 
 		const data = buffers.get( attribute );
 
